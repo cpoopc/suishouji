@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/selector_btn_bg" >
+
+    <ImageView
+        android:id="@+id/img_head"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/icon_sms" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/img_head"
+        android:padding="5dp"
+        android:gravity="center_vertical"
+        android:text="Medium Text"
+        style="@style/normaltext"/>
+	<View 
+	    android:id="@+id/divider"
+	    android:layout_width="wrap_content"
+	    android:layout_height="0.5dp"
+		android:layout_toRightOf="@+id/img_head"
+		android:layout_alignParentBottom="true"
+		android:visibility="invisible"
+	    android:background="#777777"/>
+<ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:padding="5dp"
+        android:src="@drawable/report_list_nav_bar_arrow_next" />
+
+<TextView
+    android:id="@+id/tv_extra"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_toLeftOf="@+id/imageView2"
+    android:text="Medium Text"
+        style="@style/normaltext"/>
+
+</RelativeLayout>

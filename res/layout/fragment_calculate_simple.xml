@@ -1,0 +1,40 @@
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CalculateSimpleFragment" >
+
+      <LinearLayout
+          android:id="@+id/ly_result"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/gray"
+          android:padding="5dp" >
+
+          <TextView
+              android:id="@+id/tv_result"
+              android:layout_weight="1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="0.00"
+              android:textSize="35sp"
+              android:textColor="@color/white"
+              android:layout_gravity="right"
+              android:gravity="right|center_vertical"
+              android:textAppearance="?android:attr/textAppearanceLarge" />
+
+      </LinearLayout>
+
+    <include
+        android:id="@+id/include1"
+        android:layout_width="wrap_content"
+        android:layout_height="196dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/relativeLayout1"
+        layout="@layout/calculate_layout" />
+
+</LinearLayout>

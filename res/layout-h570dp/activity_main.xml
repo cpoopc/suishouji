@@ -1,0 +1,253 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="7.0dip"
+            android:layout_marginRight="7.0dip"
+            android:layout_marginTop="8.0dip"
+            android:scaleType="fitXY"
+            android:src="@drawable/main_top_month_report_bg" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="16dp"
+            android:text="6"
+            android:textColor="@color/red_digit_mian"
+            android:textSize="31dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_toRightOf="@+id/textView1"
+            android:text="/2014"
+            android:textColor="@color/oringe_digit_mian"
+            android:textSize="16dip" />
+
+        <com.cp.suishouji.widgt.BudgetBattery
+            android:id="@+id/budgetbattery"
+            android:layout_width="85dp"
+            android:layout_height="150dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/textView1"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/widget_battery_bg" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/budgetbattery"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:layout_toLeftOf="@+id/budgetbattery"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    style="@style/main_money_label"
+                    android:text="收入总额:" />
+
+                <TextView
+                    android:id="@+id/tv_money_income"
+                    style="@style/main_money"
+                    android:text="0.00" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                style="@style/main_top_month_report_divide_iv" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    style="@style/main_money_label"
+                    android:text="支出总额:" />
+
+                <TextView
+                    android:id="@+id/tv_money_expense"
+                    style="@style/main_money"
+                    android:text="0.00" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ImageView01"
+                style="@style/main_top_month_report_divide_iv" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    style="@style/main_money_label"
+                    android:text="预算余额:" />
+
+                <TextView
+                    android:id="@+id/tv_money_budget"
+                    style="@style/main_money"
+                    android:text="0.00" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_add_expense_quickly"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="7.0dip"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_add_main"
+            android:text="记一笔"
+            android:textColor="@color/white"
+            android:textSize="27dip" />
+
+        <ImageButton
+            android:id="@+id/btn_assiatant"
+            android:layout_width="56dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="7dip"
+            android:background="@drawable/selector_btn_quick_main"
+            android:src="@drawable/spirit_magic_dark_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.cp.suishouji.widgt.MainTopItem
+            android:id="@+id/item_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </com.cp.suishouji.widgt.MainTopItem>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#cdcdcd"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+            <com.cp.suishouji.widgt.MainMiddleItem
+                android:id="@+id/item_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+            </com.cp.suishouji.widgt.MainMiddleItem>
+<TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#cdcdcd"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+            <com.cp.suishouji.widgt.MainMiddleItem
+                android:id="@+id/item_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" 
+                android:clickable="true">
+            </com.cp.suishouji.widgt.MainMiddleItem>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#cdcdcd"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <com.cp.suishouji.widgt.MainBottomItem
+            android:id="@+id/item_leaster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </com.cp.suishouji.widgt.MainBottomItem>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="50.0dip"
+        android:background="#ff474747" >
+
+        <com.cp.suishouji.widgt.ScrollIndicatorButton
+            android:id="@+id/scrollIndicatorButton1"
+            android:layout_width="40.0dip"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom|center"
+            android:background="@drawable/main_activity_bottom_btn"
+            android:paddingBottom="2.0dip" />
+        <!-- <ImageButton -->
+        <!-- android:id="@+id/imageButton2" -->
+        <!-- android:layout_width="48dip" -->
+        <!-- android:layout_height="match_parent" -->
+        <!-- android:layout_gravity="bottom|center" -->
+        <!-- android:padding="44dip" -->
+        <!-- android:background="@drawable/main_nav_circle" -->
+        <!-- android:src="@drawable/main_nav_arrow" /> -->
+
+        <com.cp.suishouji.widgt.MainToolButton
+            android:id="@+id/nav_yeartrans_btn"
+            style="@style/main_bottom_textview_style"
+            android:text="流水" />
+
+        <com.cp.suishouji.widgt.MainToolButton
+            android:id="@+id/nav_account_btn"
+            style="@style/main_bottom_textview_style"
+            android:text="账户" />
+
+        <com.cp.suishouji.widgt.MainToolButton
+            android:id="@+id/nav_report_btn"
+            style="@style/main_bottom_textview_style"
+            android:text="图表" />
+
+        <com.cp.suishouji.widgt.MainToolButton
+            android:id="@+id/nav_budget_btn"
+            style="@style/main_bottom_textview_style"
+            android:text="预算" />
+
+        <com.cp.suishouji.widgt.MainToolButton
+            android:id="@+id/nav_setting_btn"
+            style="@style/main_bottom_textview_style"
+            android:text="更多" />
+    </LinearLayout>
+
+</LinearLayout>

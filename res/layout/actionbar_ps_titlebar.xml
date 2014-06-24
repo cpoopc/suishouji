@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/oringe_string" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" >
+
+        <ImageView
+            android:id="@+id/img_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/selector_bind" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:clickable="true" >
+        <ImageButton
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:padding="15dp"
+            android:clickable="false"
+            android:duplicateParentState="true"
+            android:src="@drawable/selector_actionbar_back" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:text="备注笔记"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/bigtext"
+android:textColor="@drawable/color_actionbar_string_selector" />
+    </LinearLayout>
+
+</RelativeLayout>

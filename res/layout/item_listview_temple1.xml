@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/report_type_option_btn_bg" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:padding="10dp"
+        android:src="@drawable/icon_xcjt" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/imageView1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_templateName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:paddingBottom="2dp"
+        android:textColor="@color/white"
+            android:text="打车出租"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="@dimen/normaltext" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="2dp" >
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="支出"
+            android:textStyle="bold"
+                android:textColor="@color/green2"
+                android:textSize="@dimen/normaltext" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_type"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/tv_type"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/menu_panel_divider" />
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView4"
+                android:text="其他支出"
+            android:textStyle="bold"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/normaltext" />
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_category"
+                android:layout_alignTop="@+id/textView4"
+                android:layout_toRightOf="@+id/tv_category"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/menu_panel_divider" />
+
+            <TextView
+                android:id="@+id/tv_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/TextView01"
+                android:text="现金"
+                android:textColor="@color/gray"
+            android:textStyle="bold"
+                android:textSize="@dimen/normaltext" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:padding="10dp"
+        android:text="666,666,666.00"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/normaltext" />
+
+</RelativeLayout>

@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu_panel_bg"
+    tools:context=".TransactionSwitchFragment" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none" >
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:showDividers="none" >
+                </TabWidget>
+            </HorizontalScrollView>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" >
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="52.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@android:id/tabhost"
+        android:background="@color/menu_panel_option_section_bg"
+        android:minHeight="52.0dip" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:padding="10dp"
+            android:clickable="true"
+            android:src="@drawable/icon_add_template" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/imageView1"
+            android:padding="10dp"
+            android:clickable="true"
+            android:src="@drawable/budget_header_edit_bg" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/imageView2"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="记账模板"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/selector_textview"
+            android:textSize="@dimen/normaltext" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:padding="5dp"
+        android:src="@drawable/drop_menu_pack_up_btn" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView3"
+        android:layout_below="@+id/relativeLayout2"
+        android:divider="@color/menu_panel_divider"
+        android:dividerHeight="1dp"
+        android:scrollbars="none"
+        android:layout_centerHorizontal="true" >
+
+    </ListView>
+
+</RelativeLayout>

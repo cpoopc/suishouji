@@ -1,0 +1,40 @@
+<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" -->
+<com.cp.suishouji.widgt.PullToRefreshView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+     android:id="@+id/main_pull_refresh_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    >
+
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NavTransactionActivity" >
+
+    <ExpandableListView
+        android:id="@+id/expandablelistview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@drawable/grayl"
+        android:dividerHeight="1dp" >
+
+    </ExpandableListView>
+<!--     <com.cp.suishouji.widgt.MyExpandableListView -->
+<!--         android:id="@+id/expandablelistview" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="match_parent" -->
+<!--         android:divider="@drawable/grayl" -->
+<!--         android:dividerHeight="1dp" > -->
+
+<!--     </com.cp.suishouji.widgt.MyExpandableListView> -->
+
+	</RelativeLayout>
+</ScrollView>
+</com.cp.suishouji.widgt.PullToRefreshView>
+<!-- </LinearLayout> -->

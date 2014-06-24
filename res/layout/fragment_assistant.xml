@@ -1,0 +1,282 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AssistantFragment" >
+
+    <LinearLayout
+        android:id="@+id/ly_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/kaniu"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="5dp" >
+
+            <Button
+                android:id="@+id/img_11"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bank_sms_btn_bg"
+                android:clickable="false"
+                android:duplicateParentState="true" />
+
+            <TextView
+                android:id="@+id/tv_11"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/img_11"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="银行短信"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_12"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/img_11"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="短信自动记账"
+                android:textColor="#ff797b7e"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/gray" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_bg"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="5dp" >
+
+            <Button
+                android:id="@+id/img_12"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:clickable="false"
+                android:duplicateParentState="true" 
+                android:background="@drawable/bank_connect_btn_bg" />
+
+            <TextView
+                android:id="@+id/tv_21"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/img_12"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="银行直连"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_22"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tv_21"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/img_12"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="网银数据直连"
+                android:textColor="#ff797b7e"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="52.0dip"
+        android:layout_below="@+id/ly_1"
+        android:background="#e0e0e0"
+        android:minHeight="52.0dip" >
+
+        <ImageView
+            android:id="@+id/img_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:clickable="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_add_template" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/imageView1"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="记账模板"
+            android:textColor="#ff3b3838"
+            android:textSize="@dimen/normaltext" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lv2"
+        android:layout_below="@+id/relativeLayout2"
+        android:divider="@color/menu_panel_divider"
+        android:dividerHeight="1dp"
+        android:scrollbars="none" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/lv2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1.5"
+            android:background="@drawable/selector_btn_bg"
+            android:clickable="true" >
+
+            <TextView
+                android:id="@+id/tv_31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:text="预算预警提醒"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_31"
+                android:layout_below="@+id/tv_31"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:text="您的交流通讯预算已超支:15.00"
+                android:textColor="#ff797b7e"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/View01"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_bg"
+            android:clickable="true"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/img_31"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/icon_message"
+                android:clickable="false"
+                android:duplicateParentState="true" />
+
+            <TextView
+                android:id="@+id/tv_33"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/img_31"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="银行短信"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/emptyview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/relativeLayout2"
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView3"
+            android:layout_toRightOf="@+id/imageView3"
+            android:padding="10dp"
+            android:text="您还没有记账模板,\n点击右方加号新增吧:)"
+            android:textColor="#ff3b3838"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/nav_year_trans_empty" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

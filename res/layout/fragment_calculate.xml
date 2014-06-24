@@ -1,0 +1,89 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculateFragment" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="65dp"
+            android:layout_height="196dp"
+            android:layout_alignBottom="@+id/include1"
+            android:layout_alignTop="@+id/include1"
+            android:background="@color/grayll" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical" >
+
+
+            <com.cp.suishouji.widgt.CpButton
+                android:id="@+id/btn_cost"
+                android:layout_width="64dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                myapp:img_normal="@drawable/go_add_payout_btn_normal"
+                myapp:img_pressed="@drawable/go_add_payout_btn_selected"
+                myapp:string="支出" />
+
+        <com.cp.suishouji.widgt.CpButton
+            android:id="@+id/btn_income"
+            android:layout_width="64dp"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="0.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_bg_calcu"
+            myapp:img_normal="@drawable/go_add_income_btn_normal"
+            myapp:img_pressed="@drawable/go_add_income_btn_selected"
+            myapp:string="收入" />
+
+        <com.cp.suishouji.widgt.CpButton
+            android:id="@+id/btn_trans"
+            android:layout_width="64dp"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/button2"
+            android:layout_marginRight="0.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_bg_calcu"
+            myapp:img_normal="@drawable/go_add_transfer_btn_normal"
+            myapp:img_pressed="@drawable/go_add_transfer_btn_selected"
+            myapp:string="转账" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="3dp"
+        android:layout_height="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="62dp"
+        android:background="@color/oringe_string"/>
+     <TextView
+        android:id="@+id/tv_line2"
+        android:layout_width="3dp"
+        android:layout_height="66dp"
+		android:layout_marginTop="66dp"
+        android:layout_marginLeft="62dp"
+        android:background="@color/oringe_string"
+        android:visibility="gone"/>
+    
+
+        </RelativeLayout>
+    <include
+        android:id="@+id/include1"
+        android:layout_width="wrap_content"
+        android:layout_height="196dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/relativeLayout1"
+        layout="@layout/calculate_layout" />
+
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/selector_btn_bg" >
+
+    <ImageView
+        android:id="@+id/img_title"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:padding="10dp"
+        android:src="@drawable/icon_xcjt" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/linearlayout02"
+        android:layout_toRightOf="@+id/img_title"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/smalltextbold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:paddingBottom="2dp"
+            android:text="衣服饰品" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="2dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/smalltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预算:" />
+
+            <TextView
+                android:id="@+id/tv_budget"
+                style="@style/smalltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView1"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:text="¥ " />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:padding="10dp"
+        android:src="@drawable/report_list_nav_bar_arrow_next" />
+
+    <LinearLayout
+        android:id="@+id/linearlayout02"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/imageView2"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:background="@color/graylll" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            style="@style/smalltext"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical|right"
+            android:layout_weight="1.09"
+            android:gravity="center_vertical|right"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="余额: ¥ 66,666" />
+    </LinearLayout>
+
+</RelativeLayout>

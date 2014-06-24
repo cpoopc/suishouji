@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddAccountBookSecActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:padding="15dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+				android:layout_alignParentLeft="true"
+				android:gravity="center_vertical"
+                android:text="账本名:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/transparent"
+                android:ems="10"
+                android:gravity="center_vertical|right"
+               
+                android:inputType="textPersonName"
+                android:text="默认账本"
+                android:textSize="14sp"
+                android:textAlignment="gravity" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/grayll" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingLeft="15dp" 
+            android:paddingRight="15dp" >
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+				android:layout_alignParentLeft="true"
+				android:gravity="center_vertical"
+                android:text="账本封面:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <ImageView
+                android:id="@+id/img_book"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical|right"
+                android:src="@drawable/accountbook_shortcut_car" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/grayll" />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="暂不同步" />
+
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/checkBox1"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:numColumns="3" >
+
+    </GridView>
+
+</RelativeLayout>

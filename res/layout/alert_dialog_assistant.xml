@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/parentPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_full_bg"
+        android:minWidth="300.0dip"
+        android:orientation="vertical"
+        android:paddingBottom="15.0dip"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:paddingTop="9.0dip" >
+
+        <LinearLayout
+            android:id="@+id/topPanel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40.0dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="记账模板操作"
+                android:textSize="@dimen/bigtext" />
+
+            <ImageView
+                android:id="@+id/titleDivider"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="fill_horizontal"
+                android:scaleType="fitXY"
+                android:src="@android:drawable/divider_horizontal_bright" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/contentPanel"
+            android:layout_width="fill_parent"
+            android:layout_height="120dp"
+            android:layout_weight="1.0"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/tv_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.97"
+                android:background="@drawable/selector_btn_bg"
+                android:gravity="center"
+                android:text="编辑"
+                android:textColor="#111111"
+                android:textSize="@dimen/normaltext" />
+
+            <ImageView
+                android:id="@+id/titleDivider"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:gravity="fill_horizontal"
+                android:scaleType="fitXY"
+                android:src="@android:drawable/divider_horizontal_bright" />
+
+            <Button
+                android:id="@+id/tv_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector_btn_bg"
+                android:gravity="center"
+                android:text="删除"
+                android:textColor="#111111"
+                android:textSize="@dimen/normaltext" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonPanel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50.0dip"
+            android:orientation="horizontal"
+            android:paddingLeft="2.0dip"
+            android:paddingRight="2.0dip"
+            android:paddingTop="4.0dip" >
+
+            <Button
+                android:id="@+id/btn_cancel"
+                style="@style/Money.Button.Minor"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_margin="3.0dip"
+                android:layout_weight="1.0"
+                android:maxLines="2"
+                android:text="取消"
+                android:textColor="@color/white"
+                android:textSize="@dimen/normaltext" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

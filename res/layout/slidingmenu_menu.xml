@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_sliding_menu" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.00" >
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:src="@drawable/head_icon" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView2"
+                    android:src="@drawable/wheel_tab_ok_arrow_btn" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp" >
+
+                <RelativeLayout
+                    android:id="@+id/rl1"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp" >
+
+                    <ImageView
+                        android:id="@+id/img_book_small"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/accountbook_shortcut_car" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/img_book_small"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/tv_book_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/img_book_small"
+                            android:layout_toLeftOf="@+id/img_book_small"
+                            android:text="默认账本"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignRight="@+id/tv_book_name"
+                            android:layout_below="@+id/tv_book_name"
+                            android:text="当前账本"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl2"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="-80dp"
+                    android:layout_alignParentBottom="true" >
+
+                    <ImageView
+                        android:id="@+id/img_book_small"
+                        android:layout_width="40dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/accountbook_shortcut_car" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/img_book_small"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/tv_book_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/img_book_small"
+                            android:layout_toLeftOf="@+id/img_book_small"
+                            android:text="默认账本"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignRight="@+id/tv_book_name"
+                            android:layout_below="@+id/tv_book_name"
+                            android:text="当前账本"
+                            android:textAppearance="?android:attr/textAppearanceSmall" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#5f5450"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="#6b605c"
+                android:clickable="true" >
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="启用同步"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/oringe_string" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/textView4"
+                    android:src="@drawable/suite_info_sync" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/add_accountbook"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_add"
+                android:clickable="true" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:text="添加"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/textView3"
+                    android:src="@drawable/icon_add_template" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/gridView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:listSelector="@drawable/transparent"
+            android:numColumns="2" >
+        </GridView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:id="@+id/img_edit"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="10dp"
+            android:background="@drawable/suite_info_activity_btn_bg"
+            android:src="@drawable/nav_edit_btn_before" />
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,58 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/report_activity_bg"
+    tools:context=".ReportPiewChartActivity" >
+
+    <com.cp.piechart.PieChart
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_margin="5dip"
+ 
+ 
+        >
+
+        <com.cp.piechart.PieView
+            android:id="@+id/lotteryView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+       
+            
+            android:tag="pieView" />
+
+        <com.cp.piechart.MyButton
+            android:id="@+id/MyBt"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_gravity="top|right"
+            android:tag="pieButton" />
+
+        <TextView
+            android:id="@+id/MyTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginBottom="16dip"
+            android:gravity="center"
+            android:tag="pieText"
+            android:textColor="#FFF"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/MyTV2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginBottom="16dip"
+            android:gravity="center"
+            android:tag="pieText2"
+            android:text="没有记录"
+            android:textColor="#FFF"
+            android:textSize="15sp" />
+
+ 
+    </com.cp.piechart.PieChart>
+
+</RelativeLayout>

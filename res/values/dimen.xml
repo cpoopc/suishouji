@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="slidingwidth">80dp</dimen>
+    <dimen name="dropmenu">80dip</dimen>
+    <dimen name="height">60dip</dimen>
+    <dimen name="item_transaction_height">50dp</dimen>
+    
+     <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+	<dimen name="smalltext">14sp</dimen>
+	<dimen name="smalltextpro">11sp</dimen>
+	<dimen name="normaltext">16sp</dimen>
+	<dimen name="bigtext">20sp</dimen>
+	<dimen name="calcdig">33sp</dimen>
+	
+	
+	<dimen name="calc_btn_height">49dp</dimen>
+<!-- 	<dimen name="calc_btn_width">wrap_content</dimen> -->
+<!-- 	<dimen name="calc_btn_width">70dp</dimen> -->
+	<dimen name="groupheight">40dp</dimen>
+	<dimen name="cp_margintop">100dp</dimen>
+</resources>

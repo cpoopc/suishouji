@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_book"
+        android:layout_width="110dp"
+        android:layout_height="130dp"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/suite_bg_for_car" />
+
+    <ImageView
+        android:id="@+id/img_check"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_below="@+id/img_book"
+        android:layout_toRightOf="@+id/img_book"
+        android:layout_marginTop="-8dp"
+        android:layout_marginLeft="-8dp"
+        android:src="@drawable/widget_icon_checked_on" />
+
+</RelativeLayout> 

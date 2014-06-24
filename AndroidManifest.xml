@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cp.suishouji"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/NoTitleBar" >
+        <activity
+            android:name="com.cp.suishouji.SplashActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.MainActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.AddOrEditTransActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_add_or_edit_trans"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.CategoryManagerActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_classified_manager"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.BaseNavTitleBarActivity"
+            android:label="@string/title_activity_base_nav_title_bar"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.NavTransactionActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_nav_transaction"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.NavYearTransactionActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_nav_year_transaction"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.NavMonthTransactionActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_nav_month_transaction"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.PsNoteActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_ps_note"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.AccountDetailActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_account_detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.BudgetActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_budget"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.BudgetSecActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_budget_sec"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.ReportPiewChartActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_report"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.ReportChartActivity"
+            android:label="@string/title_activity_report_chart" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.ReportPieSecActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_report_pie_sec"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.AddAcountBookActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_add_acount_book"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.AddAccountBookSecActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_add_account_book_sec"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.DbTestActivity"
+            android:label="@string/title_activity_db_test" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.SettingActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_setting"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.zbar.lib.CaptureActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.AssistantActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_assistant"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.KaniuActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_kaniu"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+        <activity
+            android:name="com.cp.suishouji.EditTempleActivity"
+            android:label="@string/title_activity_edit_temple"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Sherlock.Light" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/oringe_string" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" >
+
+		<RelativeLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content" >
+
+
+		    <Spinner
+        		android:id="@+id/spinner1"
+		        android:layout_width="45dp"
+		        android:layout_height="45dp"
+		        android:background="@drawable/abc_spinner_ab_default_holo_dark"
+		        android:scrollbars="none"
+		        android:scrollbarSize="0dp"
+		        android:padding="10dp" />
+		</RelativeLayout>
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:src="@drawable/selector_actionbar_search" />
+
+        <ImageView
+            android:id="@+id/img_add"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/selector_actionbar_add" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:clickable="true" >
+        <ImageButton
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:padding="15dp"
+            android:clickable="false"
+            android:duplicateParentState="true"
+            android:src="@drawable/selector_actionbar_back" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:text="6月7日"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/bigtext"
+android:textColor="@drawable/color_actionbar_string_selector" />
+    </LinearLayout>
+
+</RelativeLayout>

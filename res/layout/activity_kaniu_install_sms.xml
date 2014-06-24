@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffefefef"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="90.0dip"
+                android:background="@drawable/kaniu_intro_photo_bar" />
+
+            <View
+                android:layout_width="96.0dip"
+                android:layout_height="96.0dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15.0dip"
+                android:background="@drawable/kaniu_intro_icon" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" >
+
+                <View
+                    android:layout_width="58.0dip"
+                    android:layout_height="58.0dip"
+                    android:background="@drawable/setting_install_sms_info_1" />
+
+                <TextView
+                    style="@style/Money.TextView.Main"
+                    android:layout_marginLeft="5.0dip"
+                    android:gravity="top|left|center"
+                    android:singleLine="false"
+                    android:text="银行卡消费短信，卡牛帮您自动记账" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="38.0dip"
+                android:gravity="center_vertical" >
+
+                <View
+                    android:layout_width="58.0dip"
+                    android:layout_height="58.0dip"
+                    android:background="@drawable/setting_install_sms_info_2" />
+
+                <TextView
+                    style="@style/Money.TextView.Main"
+                    android:layout_marginLeft="5.0dip"
+                    android:gravity="top|left|center"
+                    android:singleLine="false"
+                    android:text="绑定随手记，账单自动入账随手记，统计更方便" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical" >
+
+                <View
+                    android:layout_width="58.0dip"
+                    android:layout_height="58.0dip"
+                    android:background="@drawable/setting_install_sms_info_3" />
+
+                <TextView
+                    style="@style/Money.TextView.Main"
+                    android:layout_marginLeft="5.0dip"
+                    android:gravity="top|left|center"
+                    android:singleLine="false"
+                    android:text="贴心的信用卡还款提醒，再也不怕被罚息" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="38.0dip"
+                android:gravity="center_vertical" >
+
+                <View
+                    android:layout_width="58.0dip"
+                    android:layout_height="58.0dip"
+                    android:background="@drawable/setting_install_sms_info_4" />
+
+                <TextView
+                    style="@style/Money.TextView.Main"
+                    android:layout_marginLeft="5.0dip"
+                    android:gravity="top|left|center"
+                    android:singleLine="false"
+                    android:text="设计精美，可根据心情更换壁纸" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/install_sms_btn"
+            android:background="@drawable/selector_btn_bg_oringe"
+            android:layout_width="275.0dip"
+            android:layout_height="41.0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10.0dip"
+            android:textColor="@color/white"
+            android:text="免费安装"
+            android:textSize="18.0dip" />
+    </LinearLayout>
+
+</ScrollView>

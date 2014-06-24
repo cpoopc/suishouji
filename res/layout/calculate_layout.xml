@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:background="@color/grayll" >
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/buttondec" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="8"
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginBottom="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/buttonc"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="C"
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button0"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttondot"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/calc_btn_height"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_bg_calcu"
+                android:text="."
+                android:textColor="@color/white"
+                android:textSize="@dimen/calcdig"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/buttondec"
+        android:layout_width="65dp"
+        android:layout_height="@dimen/calc_btn_height"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/selector_bg_calcu"
+        android:text="―"
+        android:textColor="@color/white"
+        android:textSize="@dimen/calcdig"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonadd"
+        android:layout_width="65dp"
+        android:layout_height="@dimen/calc_btn_height"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttondec"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/selector_bg_calcu"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="@dimen/calcdig"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonok"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tableLayout1"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttonadd"
+        android:background="@drawable/selector_bg_calcu"
+        android:text="="
+        android:textColor="@color/oringe_string"
+        android:textSize="@dimen/calcdig"
+        android:textStyle="bold" />
+
+</RelativeLayout>

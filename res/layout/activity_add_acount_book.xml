@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddAcountBookActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" 
+        android:background="@drawable/grayll">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/selector_btn_bg_white"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="1dp"
+            android:text="加入多人账本" 
+            android:textSize="15sp"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/selector_btn_bg_white"
+            android:text="下载分享账本"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+         >
+
+    </ListView>
+
+</RelativeLayout>

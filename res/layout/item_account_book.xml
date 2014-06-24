@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/selector_btn_bg"
+    android:padding="7dp">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="标准账本"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:text="标准账本,分类较全"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="10dp"
+        android:src="@drawable/acc_book_template_bzlc" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/report_list_nav_bar_arrow_next" />
+
+</RelativeLayout>

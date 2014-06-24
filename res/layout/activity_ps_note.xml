@@ -1,0 +1,57 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PsNoteActivity" >
+
+    <EditText
+        android:id="@+id/edt_ps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/img_voice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_total"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/shape_edittext"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:padding="15dp" >
+
+        <requestFocus />
+    </EditText>
+
+    <ImageView
+        android:id="@+id/img_voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:clickable="true"
+        android:padding="15dp"
+        
+        android:src="@drawable/selector_voice" />
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:text="金额:¥ "
+        android:padding="15dp"
+style="@style/bigtext" />
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_total"
+        android:layout_alignBottom="@+id/tv_total"
+        android:layout_alignLeft="@+id/edt_ps"
+        android:text="服装服饰"
+style="@style/normaltext"/>
+
+</RelativeLayout>

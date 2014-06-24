@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_bg_main_middle" 
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/tv_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tv_imcome"
+        android:layout_below="@+id/tv_today"
+        android:text="¥ 0.00"
+        android:paddingRight="7dip"
+        android:paddingBottom="7dip"
+        android:textColor="@color/red"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tv_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="7dip"
+        android:paddingTop="7dip"
+        android:text="本周"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:textSize="20dip" />
+       <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_today"
+        android:text="2014年06月01日"
+        android:paddingLeft="7dip"
+        android:paddingBottom="7dip"
+        android:textSize="14dip"
+        android:textColor="#555555" />
+
+    <TextView
+        android:id="@+id/tv_imcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_expense"
+        android:paddingRight="7dip"
+        android:text="¥ 0.00"
+        
+        android:layout_toLeftOf="@+id/imageView1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/green" />
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="10dp"
+        android:src="@drawable/report_list_nav_bar_arrow_next" />
+
+</RelativeLayout>
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_bg_main_middle"
+    android:clickable="true" >
+
+    <ImageView
+        android:id="@+id/img_icon"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:padding="5dip"
+        android:scaleType="fitXY"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icon_qtzx_qtzc" />
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/img_icon"
+        android:paddingLeft="7dip"
+        android:paddingTop="7dip"
+        android:text="其它支出"
+     	 android:textColor="#333333"
+        android:textStyle="bold"
+        android:textSize="20dip" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_category"
+        android:layout_toRightOf="@+id/img_icon"
+        android:paddingLeft="7dip"
+        android:paddingBottom="7dip"
+        android:text="2014.06.01[支出]"
+        android:textColor="#555555"
+        android:textSize="12dip" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="7dip"
+        android:src="@drawable/fullscreen_arrow" />
+
+    <TextView
+        android:id="@+id/tv_imcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/imageView2"
+        android:paddingRight="7dip"
+        android:text="¥ 0.00"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/imageView2"
+        android:paddingRight="7dip"
+        android:text="¥ 0.00"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/red" />
+
+</RelativeLayout>

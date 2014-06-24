@@ -1,0 +1,380 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditTempleActivity" >
+	<ScrollView
+	    android:id="@+id/scrollview"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	     
+	    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/btn_templename"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/selector_btn_bg"
+            android:clickable="true" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/gray_normal" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/normaltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_templename"
+                android:layout_alignBottom="@+id/tv_templename"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="模板名称" />
+
+            <EditText
+                android:id="@+id/tv_templename"
+                style="@style/normaltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/transparent"
+                android:ems="10"
+                android:gravity="center_vertical|right"
+                android:text="请输入模板名称" />
+        </RelativeLayout>
+<RelativeLayout
+            android:id="@+id/btn_calculate"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/selector_btn_bg"
+            android:clickable="true" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/gray_normal" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/normaltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_calculate"
+                android:layout_alignBottom="@+id/tv_calculate"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="金额" />
+
+            <TextView
+                android:id="@+id/tv_calculate"
+                style="@style/normaltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="0.00" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/btn_category"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/selector_btn_bg"
+            android:clickable="true" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/gray_normal" />
+
+            <TextView
+                android:id="@+id/textView3"
+                style="@style/normaltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_category"
+                android:layout_alignBottom="@+id/tv_category"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="类别" />
+
+            <TextView
+                android:id="@+id/tv_category"
+                style="@style/normaltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="衣服饰品>衣服裤子" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_account"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/selector_btn_bg"
+            android:clickable="true" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/gray_normal" />
+
+            <TextView
+                android:id="@+id/tv_account"
+                style="@style/normaltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="现金(CNY)" />
+
+            <TextView
+                android:id="@+id/tv_count"
+                style="@style/normaltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_account"
+                android:layout_alignBottom="@+id/tv_account"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="账户" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_member"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/selector_btn_bg"
+            android:clickable="true"  >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/gray_normal" />
+                <TextView
+                    android:id="@+id/tv_count"
+                    style="@style/normaltext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_member"
+                    android:layout_alignBottom="@+id/tv_member"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="成员" />
+
+                <TextView
+                    android:id="@+id/tv_member"
+                    style="@style/normaltext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/textView5"
+                    android:layout_centerVertical="true"
+                    android:text="无成员" />
+
+
+            </RelativeLayout>
+<RelativeLayout
+            android:id="@+id/btn_item"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/selector_btn_bg"
+            android:clickable="true"  >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/gray_normal" />
+                <TextView
+                    android:id="@+id/textview_item"
+                    style="@style/normaltext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_item"
+                    android:layout_alignBottom="@+id/tv_item"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="项目" />
+
+                <TextView
+                    android:id="@+id/tv_item"
+                    style="@style/normaltext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/textView5"
+                    android:layout_centerVertical="true"
+                    android:text="无项目" />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+            android:id="@+id/btn_location"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/selector_btn_bg"
+            android:clickable="true"  >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/gray_normal" />
+                <TextView
+                    android:id="@+id/tv_seller"
+                    style="@style/normaltext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tv_location"
+                    android:layout_alignBottom="@+id/tv_location"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="商家" />
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    style="@style/normaltext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/textView5"
+                    android:layout_centerVertical="true"
+                    android:text="无商家/地点" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btn_ps"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" >
+
+                <EditText
+                    android:id="@+id/tv_ps"
+                    style="@style/normaltext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/transparent"
+                    android:hint="点击可输入备注信息" />
+            </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>
+<LinearLayout
+        android:id="@+id/flowview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/scrollview"
+        android:visibility="invisible"
+        android:orientation="vertical"
+        >
+
+        <!-- android:visibility="gone" -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Button"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/button1"
+                android:text="Button"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_ok"
+                android:layout_width="50dp"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/oringe_string"
+                android:background="@drawable/selector_btn_ok"
+                android:text="OK"/>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+					android:background="#444444"
+					android:layout_alignBottom="@+id/btn_ok"
+					 />
+            
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>

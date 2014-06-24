@@ -1,0 +1,117 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="smalltext">
+        <item name="android:textSize">@dimen/smalltext</item>
+        <item name="android:textColor">@color/text_gray</item>
+    </style>
+    <style name="normaltext">
+        <item name="android:textSize">@dimen/normaltext</item>
+        <item name="android:textColor">@color/text_gray</item>
+    </style>
+    <style name="bigtext">
+        <item name="android:textSize">@dimen/bigtext</item>
+        <item name="android:textColor">@color/text_gray</item>
+    </style>
+    <style name="smalltextbold">
+        <item name="android:textSize">@dimen/smalltext</item>
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="normaltextbold">
+        <item name="android:textSize">@dimen/normaltext</item>
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="bigtextbold">
+        <item name="android:textSize">@dimen/bigtext</item>
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+	<style name="MyactionStyle" parent="Theme.Sherlock.Light">
+	    
+	</style>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+	<style name="NoTitleBar" parent="android:style/Theme.Light.NoTitleBar">
+	</style>
+	<style name="main_top_month_report_divide_iv">
+        <item name="android:background">@drawable/main_top_month_report_divide</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">12.0dip</item>
+        <item name="android:layout_marginRight">8.0dip</item>
+    </style>
+    <style name="main_money_label">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">#ff7e430b</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:layout_width">80.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="main_money">
+        <item name="android:textSize">16.0dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">6.0dip</item>
+        <item name="android:layout_marginRight">15.0dip</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="main_bottom_textview_style">
+        <item name="android:textSize">11.0dip</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">bottom|center</item>
+        <item name="android:background">@drawable/main_activity_bottom_btn</item>
+        <item name="android:paddingBottom">2.0dip</item>
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <style name="Money" />
+    <style name="Money.AddOrEdit" parent="@style/Money" />
+    <style name="Money.AddOrEdit.MenuBtn" parent="@style/Money.AddOrEdit">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:textColor">@color/commom_menu_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/report_type_option_btn_bg</item>
+        <item name="android:layout_width">68.0dip</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:drawablePadding">5.0dip</item>
+    </style>
+    <style name="Money.TextView" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="Money.TextView.Main" parent="@style/Money.TextView">
+        <item name="android:textColor">@color/text_color_main</item>
+    </style>
+    <style name="Money.Button" parent="@android:style/Widget.Button">
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">40.0dip</item>
+    </style>
+    <style name="Money.Button.Main" parent="@style/Money.Button">
+        <item name="android:background">@drawable/btn_main_bg</item>
+    </style>
+    <style name="Money.Button.Minor" parent="@style/Money.Button">
+        <item name="android:background">@drawable/btn_minor_bg</item>
+    </style>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    >
+
+    <com.cp.suishouji.widgt.MyListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scrollbars="none"
+        android:divider="@drawable/transparent"
+        android:dividerHeight="0dp" >
+    </com.cp.suishouji.widgt.MyListView>
+	
+</RelativeLayout>

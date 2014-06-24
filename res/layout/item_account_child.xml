@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+     <TextView
+        android:id="@+id/leftline"
+        android:layout_width="4dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/rela"
+        android:layout_alignBottom="@+id/rela"
+android:background="@color/oringe_string" />
+
+<RelativeLayout
+    android:id="@+id/rela"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_toRightOf="@+id/leftline"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/normaltext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="现金账户" />
+
+        <TextView
+            android:id="@+id/tv_rmb"
+            style="@style/smalltext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人民币" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/report_list_nav_bar_arrow_next" />
+
+    <TextView
+        android:id="@+id/tv_money"
+        style="@style/normaltext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/imageView1"
+        android:layout_marginRight="2dp"
+        android:text="¥ 999,99.00" />
+
+</RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myapp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item_transaction_height"
+    >
+
+    <FrameLayout
+        android:id="@+id/frame01"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_transaction_height" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_transaction_height" >
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/item_transaction_height"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/relativeLayout3"
+                android:background="@drawable/selector_btn_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:longClickable="true" >
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="1dp"
+                        android:layout_height="@dimen/item_transaction_height"
+                        android:layout_alignParentLeft="true"
+                        android:background="@drawable/grayl"
+                        android:gravity="center_horizontal" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="7dip"
+                    android:src="@drawable/fullscreen_arrow" />
+
+                <TextView
+                    android:id="@+id/tv_imcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/imageView2"
+                    android:paddingRight="7dip"
+                    android:text="¥ 0.00"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/green" />
+
+                <TextView
+                    android:id="@+id/tv_expense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/imageView2"
+                    android:paddingRight="7dip"
+                    android:text="¥ 0.00"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/red" />
+
+                <TextView
+                    android:id="@+id/tv_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/relativeLayout1"
+                    android:paddingLeft="27dip"
+                    android:paddingTop="7dip"
+                    android:text="其它支出"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/normaltext"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/relativeLayout1"
+                    android:layout_alignLeft="@+id/tv_category"
+                    android:paddingBottom="7dip"
+                    android:paddingLeft="27dip"
+                    android:singleLine="true"
+                    android:text="2014.06.01[支出]"
+                    android:textColor="#777777"
+                    android:textSize="12dip" />
+
+                <TextView
+                    android:id="@+id/tv_divider3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/grayl" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout3"
+                android:layout_width="65dp"
+                android:layout_height="@dimen/item_transaction_height"
+                android:layout_alignBottom="@+id/relativeLayout2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:clickable="false" >
+
+                <TextView
+                    android:id="@+id/tv_dayofmonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="07"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tv_divider1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/grayl"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tv_xingqi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_dayofmonth"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="周六"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="45dp" >
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true" >
+
+                    <ImageView
+                        android:id="@+id/img_icon"
+                        android:layout_width="45dip"
+                        android:layout_height="45dip"
+                        android:padding="5dip"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/icon_qtzx_qtzc" />
+                </FrameLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+	<FrameLayout 
+        android:id="@+id/hide_editview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_transaction_height"
+        android:visibility="invisible"
+        android:background="#867b74" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#867b74" >
+
+        <com.cp.suishouji.widgt.CpButton2
+            android:id="@+id/nav_listitem_edit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_trans"
+            myapp:img_normal="@drawable/icon_nav_modify"
+            myapp:img_pressed="@drawable/icon_nav_modify_press"
+            myapp:string="编辑" />
+
+        <com.cp.suishouji.widgt.CpButton2
+            android:id="@+id/nav_listitem_delete"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_trans"
+            myapp:img_normal="@drawable/icon_nav_delete"
+            myapp:img_pressed="@drawable/icon_nav_delete_press"
+            myapp:string="删除" />
+
+        <com.cp.suishouji.widgt.CpButton2
+            android:id="@+id/nav_listitem_copy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_trans"
+            myapp:img_normal="@drawable/icon_nav_copy"
+            myapp:img_pressed="@drawable/icon_nav_copy_press"
+            myapp:string="复制" />
+
+        <com.cp.suishouji.widgt.CpButton2
+            android:id="@+id/nav_listitem_toincome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_trans"
+            myapp:img_normal="@drawable/drop_menu_income_btn"
+            myapp:img_pressed="@drawable/drop_menu_income_btn_press"
+            myapp:string="改为收入" />
+
+        <com.cp.suishouji.widgt.CpButton2
+            android:id="@+id/nav_listitem_totrans"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_trans"
+            myapp:img_normal="@drawable/drop_menu_transfer_btn"
+            myapp:img_pressed="@drawable/drop_menu_transfer_btn_press"
+            myapp:string="改为转账" />
+    </LinearLayout>
+</FrameLayout>
+</RelativeLayout>
