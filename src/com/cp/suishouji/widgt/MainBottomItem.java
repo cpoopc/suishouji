@@ -54,6 +54,13 @@ public class MainBottomItem extends RelativeLayout{
 			sdf.setTimeZone(TimeZone.getTimeZone("GMT+8"));
 			tv_date.setText(sdf.format(date)+str);
 	}
+	public void restore(){
+		tv_imcome.setVisibility(View.GONE);
+		tv_expense.setVisibility(View.VISIBLE);
+		tv_expense.setText("¥ 0.00");
+		tv_category.setText("暂无记录");
+		tv_date.setText("----.--.--");
+	}
 	private void initUI(Context context) {
 		View view = View.inflate(context, R.layout.main_bottom_item, null);
 		tv_imcome = (TextView) view.findViewById(R.id.tv_imcome);

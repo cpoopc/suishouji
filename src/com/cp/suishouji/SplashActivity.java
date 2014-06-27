@@ -9,6 +9,7 @@ import com.umeng.analytics.MobclickAgent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.AnimationDrawable;
@@ -20,6 +21,7 @@ import android.widget.ImageView;
 public class SplashActivity extends Activity {
 
 	private long durationMillis = 2000;
+	private boolean ready2Start = false;
 	@Override
 	protected void onResume() {
 		MobclickAgent.onResume(this, MapStatic.YOU_MENG_APPK, MapStatic.ChannelId);
@@ -37,11 +39,29 @@ public class SplashActivity extends Activity {
 			
 			@Override
 			public void run() {
-				startActivity(new Intent(SplashActivity.this,MainActivity.class));
-				finish();
+				if(ready2Start){
+					startActivity(new Intent(SplashActivity.this,MainActivity.class));
+					finish();
+				}
+				ready2Start = true;
 			}
 		}, durationMillis);
-		copyDataBaseToPhone();
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				copyDataBaseToPhone();
+				//初始化数据库
+				SharedPreferences sp = getSharedPreferences("infos", 0);
+				long clientID = sp.getLong("clientID", 0);
+				DataBaseUtil.initAccountBookDb(clientID);	
+				if(ready2Start){
+					startActivity(new Intent(SplashActivity.this,MainActivity.class));
+					finish();
+				}
+				ready2Start = true;
+			}
+		}).start();
 	}
 
 	@Override
@@ -60,7 +80,9 @@ public class SplashActivity extends Activity {
 			Log.i("tag", "The database is exist.");
 		} else {// 不存在就把raw里的数据库写入手机
 			try {
-				util.copyDataBase();
+				util.copyDataBase(R.raw.accountbook,"accountbook.db");//账户信息
+				util.copyDataBase(R.raw.template,"0示例账本.db");//示例模板
+				util.copyDataBase(R.raw.mymoney,"mymoney.db");//空模板
 			} catch (IOException e) {
 				throw new Error("Error copying database");
 			}

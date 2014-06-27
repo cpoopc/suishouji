@@ -1,5 +1,6 @@
 package com.cp.suishouji;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import com.actionbarsherlock.app.ActionBar;
@@ -23,7 +24,11 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+/**
+ * 添加账户
+ * @author cp
+ *
+ */
 public class AddAccountBookSecActivity extends UmengSherlockActivity implements OnClickListener, OnItemClickListener {
 
 	private TextView tv_title;
@@ -39,6 +44,7 @@ public class AddAccountBookSecActivity extends UmengSherlockActivity implements 
 	private MyAdapter myAdapter; 
 	private EditText editText;
 	private ImageView imageView;
+	public static int OK = 101;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,6 +54,17 @@ public class AddAccountBookSecActivity extends UmengSherlockActivity implements 
 		imageView = (ImageView) findViewById(R.id.img_book);
 		
 		//判断是否从编辑选项跳转过来
+		prepare();
+		initData();
+		GridView gridView = (GridView) findViewById(R.id.gridView1);
+		myAdapter = new MyAdapter();
+		gridView.setOnItemClickListener(this);
+		gridView.setAdapter(myAdapter);
+	}
+	/**
+	 * clientID
+	 */
+	private void prepare() {
 		clientID = -1;
 		Intent intent = getIntent();
 		String imgName = intent.getStringExtra("imgName");
@@ -63,15 +80,10 @@ public class AddAccountBookSecActivity extends UmengSherlockActivity implements 
 				}
 			}
 		}
-		
-		
-		initData();
-		GridView gridView = (GridView) findViewById(R.id.gridView1);
-		myAdapter = new MyAdapter();
-		gridView.setOnItemClickListener(this);
-		gridView.setAdapter(myAdapter);
-//		gridView.seta
 	}
+	/**
+	 * 账户封面图片
+	 */
 	private void initData() {
 		infoList = new ArrayList<AddAccountBookSecActivity.Info>();
 		for (int i = 0; i < imgNames.length; i++) {
@@ -137,6 +149,7 @@ public class AddAccountBookSecActivity extends UmengSherlockActivity implements 
 			break;
 		case R.id.img_ok:
 			save();
+			setResult(OK);
 			finish();
 			break;
 
@@ -145,23 +158,30 @@ public class AddAccountBookSecActivity extends UmengSherlockActivity implements 
 		}
 	}
 	private void save() {
-		SQLiteDatabase db = DataBaseUtil.getDb();
+//		SQLiteDatabase db = DataBaseUtil.getDb();
+		SQLiteDatabase db = DataBaseUtil.getBookDb();
 		ContentValues values = new ContentValues();
 		curName = editText.getText().toString().trim();
 		values.put("name", curName);
 		values.put("imgName", curImgName);
-		//若是编辑状态,不需要获取
 		if(clientID==-1){
 			Cursor query = db.query("t_account_book", null, null, null, null, null, "clientID");
 			query.moveToLast();
 			clientID = query.getLong(query.getColumnIndex("clientID"))+1;
 			values.put("clientID", clientID);
 			db.insert("t_account_book", null, values);
+			try {
+				new DataBaseUtil(this).copyDataBase(R.raw.mymoney, clientID+curName+".db");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}else{
+			//若是编辑状态,不需要获取,也不需要增加账本
 			values.put("clientID", clientID);
 			db.update("t_account_book", values, "clientID=?", new String[]{String.valueOf(clientID)});
 		}
-		
+		db.close();
 	}
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,

@@ -3,6 +3,7 @@ package com.cp.suishouji.adapter;
 import java.util.ArrayList;
 
 import com.cp.suishouji.AddAccountBookSecActivity;
+import com.cp.suishouji.MainActivity;
 import com.cp.suishouji.R;
 import com.cp.suishouji.dao.AccountBookInfo;
 import com.cp.suishouji.utils.DataBaseUtil;
@@ -91,7 +92,9 @@ public class AccountBookGridAdapter extends AbstractAdapter {
 				intent.putExtra("imgName", info.getImgName());
 				intent.putExtra("name", info.getName());
 				intent.putExtra("clientID", info.getClintID());
-				context.startActivity(intent);
+				if(context instanceof MainActivity){
+					((MainActivity)context).startActivityForResult(intent, 0);
+				}
 				break;
 			case R.id.pin:
 				Toast.makeText(context, "发送到桌面:"+info.getName(), 0).show();
@@ -109,8 +112,12 @@ public class AccountBookGridAdapter extends AbstractAdapter {
 					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						SQLiteDatabase db = DataBaseUtil.getDb();
+						//删除账本数据库信息
+						SQLiteDatabase db = DataBaseUtil.getBookDb();
 						db.delete("t_account_book", "clientID=?", new String[]{String.valueOf(info.getClintID())});
+						db.close();
+						//删除数据库
+						new DataBaseUtil(context).removeDb(info.getClintID()+info.getName());
 						Toast.makeText(context, "删除成功:"+info.getName(), 0).show();
 						infoList.remove(position);
 						notifyDataSetChanged();

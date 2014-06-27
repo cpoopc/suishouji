@@ -1,10 +1,12 @@
 package com.cp.suishouji.utils;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 import com.cp.suishouji.R;
+import com.cp.suishouji.dao.AccountBookInfo;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -22,7 +24,8 @@ import android.database.sqlite.SQLiteException;
 public class DataBaseUtil {
 
 	private Context context;
-	public static String dbName = "mymoney.db";// 数据库的名字
+	public static String dbName = "0示例账本.db";// 预置数据库的名字
+//	public static String dbName = "mymoney.db";// 数据库的名字
 	private static String DATABASE_PATH;// 数据库在手机里的路径
 	private static SQLiteDatabase database;
 	public DataBaseUtil(Context context) {
@@ -55,13 +58,13 @@ public class DataBaseUtil {
 	 * 
 	 * @throws IOException
 	 */
-	public void copyDataBase() throws IOException {
-		String databaseFilenames = DATABASE_PATH + dbName;
+	public void copyDataBase(int rawID,String dbname) throws IOException {
+		String databaseFilenames = DATABASE_PATH + dbname;
 		File dir = new File(DATABASE_PATH);
 		if (!dir.exists())// 判断文件夹是否存在，不存在就新建一个
 			dir.mkdir();
 		FileOutputStream os = new FileOutputStream(databaseFilenames);// 得到数据库文件的写入流
-		InputStream is = context.getResources().openRawResource(R.raw.mymoney);// 得到数据库文件的数据流 
+		InputStream is = context.getResources().openRawResource(rawID);// 得到数据库文件的数据流 
 		byte[] buffer = new byte[8192];
 		int count = 0;
 		while ((count = is.read(buffer)) > 0) {
@@ -70,6 +73,57 @@ public class DataBaseUtil {
 		}
 		is.close();
 		os.close();
+	}
+	//删除账本
+	public void removeDb(String bookName){
+		String databaseFilenames = DATABASE_PATH + bookName+".db";
+		File dir = new File(databaseFilenames);
+		if(dir.exists()){
+			dir.delete();
+		}
+	}
+	//新建账本
+	public void creatDb(String bookName) throws IOException{
+		
+		String databaseFilenames = DATABASE_PATH + bookName+".db";
+		File dir = new File(DATABASE_PATH);
+		if (!dir.exists())// 判断文件夹是否存在，不存在就新建一个
+			dir.mkdir();
+		FileOutputStream os = new FileOutputStream(databaseFilenames);// 得到数据库文件的写入流
+		InputStream is = context.getResources().openRawResource(R.raw.template);// 得到数据库文件的数据流 
+		byte[] buffer = new byte[8192];
+		int count = 0;
+		while ((count = is.read(buffer)) > 0) {
+			os.write(buffer, 0, count);
+			os.flush();
+		}
+		is.close();
+		os.close();
+		
+	}
+	/**
+	 * 分局账本设置当前数据库
+	 * @param bookName
+	 */
+	public static void setCurBook(String bookName){
+		dbName = bookName + ".db";
+	}
+	//获得账本db
+	public static void initAccountBookDb(long clientID){
+		if(clientID==0){
+			dbName = "0示例账本.db";
+			return;
+		}
+		SQLiteDatabase db = SQLiteDatabase.openDatabase(DATABASE_PATH+"accountbook.db", null, SQLiteDatabase.OPEN_READWRITE);
+//		db.query("t_account_book", table, columns, selection, selectionArgs, groupBy, having, orderBy, limit, cancellationSignal)
+		Cursor query = db.query("t_account_book", null, "clientID=?", new String[]{String.valueOf(clientID)}, null, null, null);
+		query.moveToFirst();
+		String name = query.getString(query.getColumnIndex("name"));
+		dbName = clientID+name+".db";
+		db.close();
+	}
+	public static SQLiteDatabase getBookDb(){
+		return SQLiteDatabase.openDatabase(DATABASE_PATH+"accountbook.db", null, SQLiteDatabase.OPEN_READWRITE);
 	}
 	//如何安全关闭数据库?
 	public static SQLiteDatabase getDb(){

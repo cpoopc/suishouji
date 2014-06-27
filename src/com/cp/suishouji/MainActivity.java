@@ -1,6 +1,6 @@
 package com.cp.suishouji;
 
-import java.text.DecimalFormat;
+import java.io.IOException;
 import java.util.ArrayList;
 import com.cp.suishouji.adapter.AccountBookGridAdapter;
 import com.cp.suishouji.dao.AccountBookInfo;
@@ -21,13 +21,12 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.CanvasTransformer;
 
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Canvas;
-import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,56 +41,74 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * 
+ * 主界面:
+ * 		收入,支出,预算信息;
+ * 		记一笔,小助手;
+ * 		本日,本周,本月信息;
+ * 		底部tab
+ * 侧滑界面:
+ * 		账户选择
  * @author cp
  * 
  */
 public class MainActivity extends UmengActivity implements OnClickListener {
 
 	String TAG = "MainActivity";
+	private int requestCode;
 	private SlidingMenu slidingMenu;
 	private View menuView;
-	private ArrayList<AccountBookInfo> accountbookList;
-	// 消费信息列表
-	private ArrayList<ExpenseInfo> expenseList;
+	
+	//账户
 	private GridView mgridView;
-	private int requestCode;
-	private TextView tv_money_expense;
-	private TextView tv_money_income;
-	private TextView tv_money_budget;
-	private MainTopItem todayItem;
-	private MainMiddleItem weekItem;
-	private MainMiddleItem monthItem;
-	private MainBottomItem lasterItem;
-	private BudgetBattery budgetBattery;
+	private ArrayList<AccountBookInfo> accountbookList;
 	private AccountBookGridAdapter gridAdapter;
-	private ImageView img_book_small;
+	private AccountBookInfo mCurInfo;//当前账户信息
+//	private ImageView img_book_small;
 	private ImageView img_edit;
 	private View rl1;
 	private View rl2;
 	private TranslateAnimation animation;
+	
+	// 消费信息列表
+	private ArrayList<ExpenseInfo> expenseList;
+	
+	//支出,收入,预算余额
+	private TextView tv_money_expense;
+	private TextView tv_money_income;
+	private TextView tv_money_budget;
+	
+	//本日,本周,本月流水账
+	private MainTopItem todayItem;
+	private MainMiddleItem weekItem;
+	private MainMiddleItem monthItem;
+	private MainBottomItem lasterItem;
+	
+	//预算槽
+	private BudgetBattery budgetBattery;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-//		MyUtil.logTime(1);
 		initSlidingMenu();
 		initMenuView();
 		initUI();
 		// 读取界面需要的数据
 		// readDb();
-//		MyUtil.logTime(2);
 		new Thread(new ReadMainDataThread()).start();
-//		MyUtil.logTime(3);
 	}
 
 	@Override
 	protected void onDestroy() {
+		//关闭数据库
 		DataBaseUtil.closeDb();
 		super.onDestroy();
 	}
-
+/**
+ * 线程读取主界面信息
+ * @author cp
+ *
+ */
 	class ReadMainDataThread implements Runnable {
 
 		private double costmoney;
@@ -109,8 +126,8 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 		public void run() {
 
 			SQLiteDatabase db = DataBaseUtil.getDb();
-			long clientID = getSharedPreferences("infos", 0).getLong(
-					"clientID", 0);
+//			long clientID = getSharedPreferences("infos", 0).getLong(
+//					"clientID", 0);
 			Cursor queryo = db.query("t_transaction", null, "type=?",
 					new String[] { "0" }, null, null, null);// 查询支出
 			boolean toFirst = queryo.moveToFirst();
@@ -149,7 +166,6 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 			}
 			query_budget.close();
 
-			// CP
 			// 查询今天 select * from t_transaction where tradetime>今天的ms
 			long todayMillis = MyUtil.getDayMillis(0);
 			Cursor queryToday = db.query("t_transaction", null, "tradetime>?",
@@ -232,27 +248,30 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 					lastinfo.name = name;
 					lastinfo.imgResId = imgResId;
 				}
-				runOnUiThread(new Runnable() {
-
-					@Override
-					public void run() {
+			}
+			runOnUiThread(new Runnable() {
+				
+				@Override
+				public void run() {
 //						MyUtil.logTime("子线程结束");
-						DecimalFormat df = new DecimalFormat("#0.00");
+//						DecimalFormat df = new DecimalFormat("#0.00");
 //						tv_money_expense.setText("¥ "+ String.valueOf(df.format(costmoney)));
 //						tv_money_income.setText("¥ "+ String.valueOf(df.format(incomemoney)));
-						tv_money_expense.setText("¥ "+ MyUtil.doubleFormate(costmoney));
-						tv_money_income.setText("¥ "+ MyUtil.doubleFormate(incomemoney));
-						budgetBattery.setBudgetData(budget, budget - costmoney);
-						tv_money_budget.setText("¥ "+ MyUtil.doubleFormate(budget - costmoney));
-						todayItem.setPeriodInfo(todayInfo);
-						weekItem.setPeriodInfo(weekInfo);
-						monthItem.setPeriodInfo(monthInfo);
-						if (lastinfo != null) {
-							lasterItem.setTransactionInfo(lastinfo);
-						}
+					if(tv_money_expense==null) return;
+					tv_money_expense.setText("¥ "+ MyUtil.doubleFormate(costmoney));
+					tv_money_income.setText("¥ "+ MyUtil.doubleFormate(incomemoney));
+					budgetBattery.setBudgetData(budget, budget - costmoney);
+					tv_money_budget.setText("¥ "+ MyUtil.doubleFormate(budget - costmoney));
+					todayItem.setPeriodInfo(todayInfo);
+					weekItem.setPeriodInfo(weekInfo);
+					monthItem.setPeriodInfo(monthInfo);
+					if (lastinfo != null) {
+						lasterItem.setTransactionInfo(lastinfo);
+					}else{
+						lasterItem.restore();
 					}
-				});
-			}
+				}
+			});
 
 		}
 	}
@@ -266,7 +285,7 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 		slidingMenu.setMenu(menuView);
 		mgridView = (GridView) menuView.findViewById(R.id.gridView1);
 		menuView.findViewById(R.id.add_accountbook).setOnClickListener(this);
-		img_book_small = (ImageView) menuView.findViewById(R.id.img_book_small);
+//		img_book_small = (ImageView) menuView.findViewById(R.id.img_book_small);
 		img_edit = (ImageView) menuView.findViewById(R.id.img_edit);
 		rl1 = menuView.findViewById(R.id.rl1);
 		rl2 = menuView.findViewById(R.id.rl2);
@@ -284,19 +303,25 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 				for (int i = 0; i < accountbookList.size(); i++) {
 					if (i == position) {
 						accountbookList.get(i).setChoise(true);
-						// 设置显示当前账本[滚动动画]
+						// 设置显示当前账本[切换账本时滚动动画]
 						setCurAccountBook(accountbookList.get(i));
-						// 保存账本信息,
+						// 保存当前账本信息,
 						getSharedPreferences("infos", 0)
 								.edit()
-								.putLong("clientID",
-										accountbookList.get(i).getClintID())
+								.putLong("clientID",accountbookList.get(i).getClintID())
 								.commit();
 					} else {
 						accountbookList.get(i).setChoise(false);
 					}
 				}
 				gridAdapter.notifyDataSetChanged();
+				//TODO切换数据库
+				DataBaseUtil.closeDb();
+				DataBaseUtil.setCurBook(position+accountbookList.get(position).getName());
+				//更换数据库
+//				DataBaseUtil.setCurBook("cpoopc");
+//				DataBaseUtil.closeDb();
+				//更换账本后刷新主页面信息
 				new Thread(new ReadMainDataThread()).start();
 			}
 		});
@@ -314,22 +339,25 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 		}
 	}
 
-	private AccountBookInfo curInfo;
-
+	/**
+	 * 设置当前账本;(第一次设置时无动画,切换账本时滚动显示)
+	 * mCurInfo 当前账户
+	 * @param newInfo	切换后的账户
+	 */
 	public void setCurAccountBook(AccountBookInfo newInfo) {
-		if (curInfo.getClintID() == newInfo.getClintID()) {// 不需要滚动,第一次设置,rl1
+		if (mCurInfo.getClintID() == newInfo.getClintID()) {// 不需要滚动,第一次设置,rl1
 			((ImageView) rl1.findViewById(R.id.img_book_small))
 					.setImageResource(getResources().getIdentifier(
-							curInfo.getImgName(), "drawable", getPackageName()));
-			((TextView) rl1.findViewById(R.id.tv_book_name)).setText(curInfo
+							mCurInfo.getImgName(), "drawable", getPackageName()));
+			((TextView) rl1.findViewById(R.id.tv_book_name)).setText(mCurInfo
 					.getName());
 		} else {
 			initScrollAnimation();
 			// rl1变2,clear,
 			((ImageView) rl1.findViewById(R.id.img_book_small))
 					.setImageResource(getResources().getIdentifier(
-							curInfo.getImgName(), "drawable", getPackageName()));
-			((TextView) rl1.findViewById(R.id.tv_book_name)).setText(curInfo
+							mCurInfo.getImgName(), "drawable", getPackageName()));
+			((TextView) rl1.findViewById(R.id.tv_book_name)).setText(mCurInfo
 					.getName());
 			rl1.clearAnimation();
 			// rl2 clear,变新的,
@@ -343,17 +371,20 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 			rl1.startAnimation(animation);
 			rl2.startAnimation(animation);
 		}
-		curInfo = newInfo;
+		mCurInfo = newInfo;
 	}
 
 	private void initMenuViewData() {
 		/**
 		 * 查询账本信息
+		 * 	CP 
 		 */
 		accountbookList = new ArrayList<AccountBookInfo>();
 		SharedPreferences sp = getSharedPreferences("infos", 0);
 		long curID = sp.getLong("clientID", 0);
-		SQLiteDatabase db = DataBaseUtil.getDb();
+		//查询有什么
+//		SQLiteDatabase db = DataBaseUtil.getDb();
+		SQLiteDatabase db = DataBaseUtil.getBookDb();
 		Cursor query = db.query("t_account_book", null, null, null, null, null,
 				"clientID");
 		boolean toFirst = query.moveToFirst();
@@ -364,7 +395,7 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 			AccountBookInfo info = new AccountBookInfo(clientID, name, imgName,
 					curID == clientID ? true : false);
 			if (curID == clientID) {
-				curInfo = info;
+				mCurInfo = info;
 			}
 			accountbookList.add(info);
 			// Log.e("curID==clientID? true:false", (curID==clientID?
@@ -372,8 +403,9 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 			toFirst = query.moveToNext();
 		}
 		query.close();
+		db.close();
 		// 设置显示当前账本[第一次无滚动动画]
-		setCurAccountBook(curInfo);
+		setCurAccountBook(mCurInfo);
 		gridAdapter = new AccountBookGridAdapter(this, accountbookList);
 		mgridView.setAdapter(gridAdapter);
 	}
@@ -401,7 +433,7 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 		// slidingMenu.setBehindOffset(scrollIndicatorButton.getButtonRight());
 		scrollIndicatorButton.setOnClickListener(this);
 
-		// 底部一排按钮,设置图片,TODO 点击事件
+		// 底部一排按钮,设置图片,TODO点击事件
 		MainToolButton nav_yeartrans = (MainToolButton) findViewById(R.id.nav_yeartrans_btn);// 年流水账
 		MainToolButton nav_account = (MainToolButton) findViewById(R.id.nav_account_btn);// 账户
 		MainToolButton nav_budget = (MainToolButton) findViewById(R.id.nav_budget_btn);// 预算
@@ -482,7 +514,11 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 			}
 		}
 	}
-
+/**
+ * 侧滑过程的回调接口
+ * @author cp
+ *
+ */
 	class MyCanvasTransformer implements CanvasTransformer {
 		ScrollIndicatorButton scrollbutton;
 
@@ -508,12 +544,13 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 	public void onClick(View v) {
 		Intent intent;
 		switch (v.getId()) {
-		case R.id.add_accountbook:
-			intent = new Intent(this, AddAcountBookActivity.class);
-			startActivityForResult(intent, requestCode);
-			break;
 		case R.id.scrollIndicatorButton1:
 			slidingMenu.toggle();
+			break;
+		//账本
+		case R.id.add_accountbook://添加账本
+			intent = new Intent(this, AddAcountBookActivity.class);
+			startActivityForResult(intent, requestCode);
 			break;
 		case R.id.img_edit: // 编辑账本
 			if (gridAdapter.isEdit()) {
@@ -525,25 +562,25 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 			}
 			break;
 		// 底排tab
-		case R.id.nav_yeartrans_btn:
+		case R.id.nav_yeartrans_btn://年流水账
 			intent = new Intent(this, NavYearTransactionActivity.class);
 			startActivityForResult(intent, requestCode);
 			break;
-		case R.id.nav_account_btn:
+		case R.id.nav_account_btn://账户
 			intent = new Intent(this, AccountDetailActivity.class);
 			startActivityForResult(intent, requestCode);
 			break;
-		case R.id.nav_budget_btn:
+		case R.id.nav_budget_btn://预算
 			intent = new Intent(this, BudgetActivity.class);
 			intent.putParcelableArrayListExtra("expenseList", expenseList);
 			startActivityForResult(intent, requestCode);
 			break;
-		case R.id.nav_report_btn:
+		case R.id.nav_report_btn://图表
 			intent = new Intent(this, ReportPiewChartActivity.class);
 			intent.putParcelableArrayListExtra("expenseList", expenseList);
 			startActivityForResult(intent, requestCode);
 			break;
-		case R.id.nav_setting_btn:
+		case R.id.nav_setting_btn://设置
 			intent = new Intent(this, SettingActivity.class);
 			startActivityForResult(intent, requestCode);
 			break;
@@ -552,7 +589,7 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 			intent = new Intent(this, AddOrEditTransActivity.class);
 			startActivityForResult(intent, requestCode);
 			break;
-		case R.id.btn_assiatant:
+		case R.id.btn_assiatant://小助手
 			intent = new Intent(this, AssistantActivity.class);
 			startActivityForResult(intent, requestCode);
 			break;
@@ -568,7 +605,7 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 //		readDb();
 		new Thread(new ReadMainDataThread()).start();
 		initMenuViewData();
-		// Toast.makeText(this, TAG, 0).show();
+//		 Toast.makeText(this, TAG, 0).show();
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 }
