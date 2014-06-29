@@ -73,12 +73,23 @@ public class MainBottomItem extends RelativeLayout{
 		}
 	}
 	
+	boolean flag;
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
-		if (ev.getAction() == MotionEvent.ACTION_UP) {
-			if(listener!=null){
+		if(ev.getX()<0||ev.getX()>getWidth()||ev.getY()<0||ev.getY()>getHeight()){
+			flag = false;
+		}
+		switch (ev.getAction()) {
+		case MotionEvent.ACTION_DOWN:
+			flag = true;
+			break; 
+		case MotionEvent.ACTION_UP:
+			if(flag&&listener!=null){
 				listener.onclick(this);
 			}
+			break;
+		default:
+			break;
 		}
 		return super.onInterceptTouchEvent(ev);
 	}

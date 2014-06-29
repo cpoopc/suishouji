@@ -77,6 +77,7 @@ public class BudgetBattery extends View{
 	//对比初始数据,如果小于初始数据,下降动画
 	public void setBudgetData(double budget,double budget_ex){
 		double percent = budget_ex/budget;
+		if(percent_start == percent)return;
 		if(budget_ex<0 || budget ==0){
 			//没变化直接返回
 //			return;
@@ -120,41 +121,6 @@ public class BudgetBattery extends View{
 			}, 50);
 		}
 		animaend = false;
-//		if(percent_start<percent){
-//			//增长动画
-//			animaend = false;
-//			this.postDelayed(new Runnable() {
-//				
-//				@Override
-//				public void run() {
-//					if(x<total){
-//						x+=2;
-//						invalidate();
-//						postDelayed(this, 50);
-//					}else{
-//						animaend = true;
-//						invalidate();
-//					}
-//				}
-//			}, 50);
-//		}else{
-//			//下降动画
-//			animaend = false;
-//			this.postDelayed(new Runnable() {
-//				
-//				@Override
-//				public void run() {
-//					if(x>total){
-//						x-=2;
-//						invalidate();
-//						postDelayed(this, 50);
-//					}else{
-//						animaend = true;
-//						invalidate();
-//					}
-//				}
-//			}, 50);
-//		}
 		percent_start = percent;
 		
 	}

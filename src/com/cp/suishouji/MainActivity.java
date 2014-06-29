@@ -2,6 +2,8 @@ package com.cp.suishouji;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
+
 import com.cp.suishouji.adapter.AccountBookGridAdapter;
 import com.cp.suishouji.dao.AccountBookInfo;
 import com.cp.suishouji.dao.ExpenseInfo;
@@ -94,7 +96,6 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 		initMenuView();
 		initUI();
 		// 读取界面需要的数据
-		// readDb();
 		new Thread(new ReadMainDataThread()).start();
 	}
 
@@ -249,14 +250,11 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 					lastinfo.imgResId = imgResId;
 				}
 			}
+			//更新主界面控件
 			runOnUiThread(new Runnable() {
 				
 				@Override
 				public void run() {
-//						MyUtil.logTime("子线程结束");
-//						DecimalFormat df = new DecimalFormat("#0.00");
-//						tv_money_expense.setText("¥ "+ String.valueOf(df.format(costmoney)));
-//						tv_money_income.setText("¥ "+ String.valueOf(df.format(incomemoney)));
 					if(tv_money_expense==null) return;
 					tv_money_expense.setText("¥ "+ MyUtil.doubleFormate(costmoney));
 					tv_money_income.setText("¥ "+ MyUtil.doubleFormate(incomemoney));
@@ -453,6 +451,11 @@ public class MainActivity extends UmengActivity implements OnClickListener {
 		nav_setting.setOnClickListener(this);
 		btn_add_expense_quickly.setOnClickListener(this);
 		btn_assiatant.setOnClickListener(this);
+		//月/年
+		TextView tvMonth = (TextView) findViewById(R.id.textView1);
+		TextView tvYear = (TextView) findViewById(R.id.textView2);
+		tvMonth.setText(""+(new Date(System.currentTimeMillis()).getMonth()+1));
+		tvYear.setText("/"+(new Date(System.currentTimeMillis()).getYear()+1900));
 		// 支出,收入
 		tv_money_expense = (TextView) findViewById(R.id.tv_money_expense);
 		tv_money_income = (TextView) findViewById(R.id.tv_money_income);
